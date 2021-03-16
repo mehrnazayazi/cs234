@@ -87,7 +87,7 @@ def sorts1s2(s1, s2):
 
 
 if __name__ == "__main__":
-    sequence = "processing"
+    sequence = "mississippi"
     s0 = []
     s1 = []
     s2 = []
@@ -130,9 +130,10 @@ if __name__ == "__main__":
                     sorted_keys.append(item[1])
                     found = 1
                     break
+    #TODO do quick sort inst4ead of swap
     print(sorted_keys)
     for i in range(len(s12_sorted)-1):
-        if s12_sorted[i] == s12_sorted[i+1]:
+        if s12_sorted[i][0] == s12_sorted[i+1][0]:
             pair = [sequence[sorted_keys[i]:], sequence[sorted_keys[i+1]:]]
             pair2 = radix_sort_letters(pair)
             if pair != pair2:
@@ -143,6 +144,7 @@ if __name__ == "__main__":
 
 
     #sort s0
+    #TODO sort
     c1 = []
     s0_altered = []
     for i in range(len(s0)):
@@ -180,7 +182,7 @@ if __name__ == "__main__":
             if j==len(c1):
                 break
         if j>i+1:
-            quickSort(c1, i, j, 2)
+            quickSort(c1, i, j - 1, 2)
 
     c2 = []
     i = 0
@@ -222,7 +224,7 @@ if __name__ == "__main__":
             if gram == s12_sorted[item][0][0:2]:
                 gram = gram+str(-1)
             s12_sorted[item] = [gram, s12_sorted[item][1], s12_sorted[item][2]]
-
+    quickSort(s12_sorted,0, len(s12_sorted)-1, 0)
 
     #change C1 and C2:
     for i in range(len(c1)):
@@ -265,7 +267,7 @@ if __name__ == "__main__":
             j+=1
     elif j == size_2:
         while i<size_1:
-            res.append(s12[i][1])
+            res.append(s12_sorted[i][1])
             i+=1
     print(res)
     # res = res + s12_sorted[i:][1] + c1[j:][1]
