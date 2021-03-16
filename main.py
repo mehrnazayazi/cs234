@@ -87,7 +87,7 @@ def sorts1s2(s1, s2):
 
 
 if __name__ == "__main__":
-    sequence = "mississippi"
+    sequence = "abbbcccaaacacacaabababcbcbcaaaagggggtttgtgtgtgtgtgtbgbgbgbgbgbgagagagagagaacaccabcbcbcbgbgbggrgrgrgtgtgtgt"
     s0 = []
     s1 = []
     s2 = []
